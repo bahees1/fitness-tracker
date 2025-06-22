@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles/Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faRunning, faChartBar, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faRunning } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 function Sidebar() {
@@ -9,21 +10,16 @@ function Sidebar() {
     <div className="sidebar">
       <nav>
         <ul>
-          <li>
-            <FontAwesomeIcon icon={faHome} className="fa-icon" />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faRunning} className="fa-icon" />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faChartBar} className="fa-icon" />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faCog} className="fa-icon" />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faSignOutAlt} className="fa-icon" />
-          </li>
+            <Link to='/'>
+                <li>
+                    <FontAwesomeIcon icon={faHome} className="fa-icon" />
+                </li>
+            </Link>
+            <Link to='/edit-activity'>
+                <li>
+                    <FontAwesomeIcon icon={faRunning} className="fa-icon" />
+                </li>
+            </Link>
         </ul>
       </nav>
     </div>
