@@ -1,6 +1,6 @@
 .sidebar {
   width: 80px;
-  background-color: #6a4c93 !important;
+  background-color: #6a4c93;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +10,7 @@
 }
 
 .logo {
+  
   font-size: 24px;
   color: #fff;
   margin-bottom: 20px;
@@ -20,6 +21,7 @@
 }
 
 nav ul {
+
   list-style: none;
   padding: 0;
   margin: 0;

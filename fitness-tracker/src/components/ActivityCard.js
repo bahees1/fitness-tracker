@@ -6,7 +6,7 @@ const ActivityCards = () => {
     const activities = [
         { name: "Walking", progress: 45, goal: "10km / week", current: "4.5/10 km", icon: <FaWalking />},
         { name: "Running", progress: 75, goal: "20km / week", current: "15/20 km", icon: <FaRunning />},
-        { name: "Exercising", progress: 25, goal: "4x / week", current: "1/4 times", icon: <FaDumbbell />},
+        { name: "Workouts", progress: 25, goal: "4x / week", current: "1/4 times", icon: <FaDumbbell />},
 
     ];
 

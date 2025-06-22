@@ -3,6 +3,7 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import ActivityCards from './components/ActivityCard';
+import Overview from './components/Overview';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Sidebar />
         <div className='main-content'>
           <Header />
+          <Overview />
           <ActivityCards />
 
         </div>

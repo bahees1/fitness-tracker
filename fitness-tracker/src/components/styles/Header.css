@@ -15,6 +15,7 @@ h1{
   text-transform: uppercase;
 }
 .header-content {
+  
   display: flex;
   align-items: center;
   width: 100%;
@@ -27,11 +28,13 @@ h1{
 }
 
 .header-right {
+  
   display: flex;
   align-items: center;
 }
 
 .header-right input {
+  
   padding: 10px;
   margin-right: 10px;
   border: none;
@@ -39,6 +42,7 @@ h1{
   font-size: 16px;
 }
 .search-container input{
+  
   border-radius: 20px;
 }
 .search-container {
@@ -59,6 +63,7 @@ h1{
 }
 
 .profile-pic {
+  
   width: 40px;
   height: 40px;
   border-radius: 50%;
