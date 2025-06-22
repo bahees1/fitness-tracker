@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import ActivityCards from './components/ActivityCard';
 import Overview from './components/Overview';
+import EditActivityCards from './components/EditActivityCards';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FaWalking, FaRunning, FaDumbbell} from 'react-icons/fa';
 
@@ -11,7 +12,7 @@ function App() {
   const [activities, setActivities] = useState([
       { name: "Walking", progress: 45, goal: "10km / week", current: "4.5/10 km", icon: <FaWalking />},
       { name: "Running", progress: 75, goal: "20km / week", current: "15/20 km", icon: <FaRunning />},
-      { name: "Workouts", progress: 25, goal: "4x / week", current: "1/4 times", icon: <FaDumbbell />},
+      { name: "Workouts", progress: 25, goal: "4 sessions / week", current: "1/4 sessions", icon: <FaDumbbell />},
 
   ]);
 

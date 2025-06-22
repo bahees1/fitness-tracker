@@ -1,10 +1,10 @@
 import React from 'react';
-
 import './styles/ActivityCards.css';
 
 const ActivityCards = ({ activities }) => {
     return (
         <div className='activity-cards'>
+            
             {activities.map((activity, index) => (
                 <div className='activity-card' key={index}>
                     <div className='activity-header'>
