@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import ActivityCards from './components/ActivityCard';
 
 function App() {
   return (
     <div className="App">
         <Sidebar />
         <div className='main-content'>
+          <Header />
+          <ActivityCards />
 
         </div>
     </div>
