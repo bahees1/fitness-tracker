@@ -37,9 +37,12 @@ const EditActivityCards = ({activities, setActivities}) => {
             <div className='activity-cards'>
                 {localEdits.map((activity, index) => (
                     <div className='activity-card-editable' key={index}>
-                        <h3>{activity.name}</h3>
+                        <div className='activity-header'>
+                            <div className='activity-icon'>{activity.icon}</div>
+                            <div className='activity-name'>{activity.name}</div>
+                        </div>
                         <label>
-                            Goal:
+                            Goal
                             <input 
                                 type='text'
                                 value={activity.goal}
@@ -47,7 +50,7 @@ const EditActivityCards = ({activities, setActivities}) => {
                             />
                         </label>
                         <label>
-                            Current:
+                            Current
                             <input 
                                 type='text'
                                 value={activity.current}

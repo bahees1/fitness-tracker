@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/ActivityCards.css';
+import './styles/ActivityCard.css';
 
 const ActivityCards = ({ activities }) => {
     return (

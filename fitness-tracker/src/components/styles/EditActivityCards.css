@@ -1,0 +1,70 @@
+h2{
+    margin-left: 20px;
+    margin-top: 30px;
+    color: white;
+}
+
+label {
+    color: white;
+}
+input{
+    border-radius: 8px;
+    width: 200px;
+    height: 30px;
+}
+
+button{
+    background-color: #dfd0b8;
+    width: 50px;
+    box-shadow: none;
+}
+
+.activity-cards {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 30px;
+}
+
+.activity-card-editable {
+    flex: 1 1 30%;
+    max-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #393e46; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.329);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.activity-icon {
+    font-size: 40px;
+    margin-right: 10px;
+    color: #ffffff;
+    background-color: #dfd0b8;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity-card-editable:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}  
+
+.activity-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
