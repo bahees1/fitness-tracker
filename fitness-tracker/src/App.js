@@ -10,6 +10,7 @@ import { FaWalking, FaRunning, FaDumbbell} from 'react-icons/fa';
 
 function App() {
   const [activities, setActivities] = useState([
+      { name: "Empty", progress: 0, goal: "", current: ""},
       { name: "Walking", progress: 45, goal: "10km / week", current: "4.5/10 km", icon: <FaWalking />},
       { name: "Running", progress: 75, goal: "20km / week", current: "15/20 km", icon: <FaRunning />},
       { name: "Workouts", progress: 25, goal: "4 sessions / week", current: "1/4 sessions", icon: <FaDumbbell />},
