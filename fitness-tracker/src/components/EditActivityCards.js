@@ -12,6 +12,7 @@ const EditActivityCards = ({activities, setActivities}) => {
         const updated = [...localEdits];
         updated[index][field] = value;
         setLocalEdits(updated);
+        
     };
     const handleSave = (index) => {
         const updated = [...activities];
@@ -59,7 +60,7 @@ const EditActivityCards = ({activities, setActivities}) => {
                         <label>
                             Goal
                             <input 
-                                type='text'
+                                type='number'
                                 value={activity.goal}
                                 onChange={(e) => handleChange(index, 'goal', e.target.value)}
                             />
@@ -67,7 +68,7 @@ const EditActivityCards = ({activities, setActivities}) => {
                         <label>
                             Current
                             <input 
-                                type='text'
+                                type='number'
                                 value={activity.current}
                                 onChange={(e) => handleChange(index, 'current', e.target.value)}
                                 

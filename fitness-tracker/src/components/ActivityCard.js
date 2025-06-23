@@ -2,9 +2,10 @@ import React from 'react';
 import './styles/ActivityCard.css';
 
 const ActivityCards = ({ activities }) => {
+
+
     return (
         <div className='activity-cards'>
-            
             {activities.map((activity, index) => (
                 <div className='activity-card' key={index}>
                     <div className='activity-header'>
@@ -20,7 +21,7 @@ const ActivityCards = ({ activities }) => {
                             <div className='progress' style={{ width: `${activity.progress}%`}}></div>
                         </div>
                         <div className='current-progress'>
-                            <span>{activity.current}</span>
+                            <span>{activity.current}/{activity.goal} Hrs</span>
                         </div>
                     </div>
                 </div>
