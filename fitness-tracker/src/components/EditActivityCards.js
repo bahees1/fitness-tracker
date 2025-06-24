@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles/EditActivityCards.css';
 
 
-const EditActivityCards = ({activities, setActivities}) => {
+const EditActivityCards = ({activities, setActivities, completedActivities, setCompletedActivities}) => {
     const [localEdits, setLocalEdits] = useState(() => 
     activities.map(activity => ({ ...activity }))
     );
@@ -18,7 +18,7 @@ const EditActivityCards = ({activities, setActivities}) => {
         const updated = [...activities];
         updated[index] = {...localEdits[index]};
         setActivities(updated);
-        updated[index].progress = (updated[index].current / updated[index].goal) * 100;
+        updated[index].progress = Math.floor((updated[index].current / updated[index].goal) * 100);
         alert(`Edit Saved`)
     };
 
@@ -34,7 +34,12 @@ const EditActivityCards = ({activities, setActivities}) => {
         alert(`Activity Added`);
     };
 
-    const handleComplete = () => {
+    const handleComplete = (index) => {
+        const updated = [...completedActivities];
+        updated[index] = {...localEdits[index]};
+        setCompletedActivities(updated)
+        handleRemove(index);
+        alert(`Activity Completed`);
         
     };
     
