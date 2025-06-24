@@ -12,21 +12,14 @@ const EditActivityCards = ({activities, setActivities}) => {
         const updated = [...localEdits];
         updated[index][field] = value;
         setLocalEdits(updated);
-        
+
     };
     const handleSave = (index) => {
         const updated = [...activities];
         updated[index] = {...localEdits[index]};
         setActivities(updated);
+        updated[index].progress = (updated[index].current / updated[index].goal) * 100;
         alert(`Edit Saved`)
-    };
-
-    const handleReset = (index) => {
-        const original = activities[index];
-        const updated = [...localEdits];
-        updated[index] = {...original };
-        setLocalEdits(updated);
-
     };
 
     const handleRemove = (delIndex) => {
@@ -37,10 +30,13 @@ const EditActivityCards = ({activities, setActivities}) => {
     };
     
     const handleAdd = () => {
-        const add = [...activities, activities[0]];
-        setActivities(add);
+        setActivities(activities => [...activities, activities[0]]);
         alert(`Activity Added`);
-    }
+    };
+
+    const handleComplete = () => {
+        
+    };
     
     
 
@@ -58,18 +54,20 @@ const EditActivityCards = ({activities, setActivities}) => {
                             <div className='activity-name'>{activity.name}</div>
                         </div>
                         <label>
-                            Goal
+                            Goal 
                             <input 
                                 type='number'
                                 value={activity.goal}
+                                placeholder='Enter # of hours'
                                 onChange={(e) => handleChange(index, 'goal', e.target.value)}
                             />
                         </label>
                         <label>
-                            Current
+                            Current 
                             <input 
                                 type='number'
                                 value={activity.current}
+                                placeholder='Enter # of hours'
                                 onChange={(e) => handleChange(index, 'current', e.target.value)}
                                 
                             />
@@ -77,6 +75,7 @@ const EditActivityCards = ({activities, setActivities}) => {
                         <div className='edit-buttons'>
                             <button onClick={() => handleSave(index)}>Save</button>
                             <button onClick={() => handleRemove(index)}>Remove</button>
+                            <button onClick={() => handleComplete(index)}>Completed</button>
                         </div>
 
                     </div>
