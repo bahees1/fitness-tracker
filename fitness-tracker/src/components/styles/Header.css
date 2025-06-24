@@ -41,26 +41,7 @@ h1{
   border-radius: 4px;
   font-size: 16px;
 }
-.search-container input{
-  
-  border-radius: 20px;
-}
-.search-container {
-  position: relative;
-}
 
-.search-icon {
-  color: rgb(64, 64, 64);
-  margin-right: 15px;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-}
-
-.search-container input[type="text"] {
-  padding-right: 30px;
-}
 
 .profile-pic {
   

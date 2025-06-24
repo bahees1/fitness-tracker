@@ -4,8 +4,8 @@ import './styles/CompletedActivityCards.css';
 const CompletedActivityCards = ({ completedActivities }) => {
     return (
         <div className='activity-cards'>
-            {completedActivities.map((completedActivity, index) => (
-                <div className='activity-card' key={index}>
+            {completedActivities.map((completedActivity, key) => (
+                <div className='activity-card' key={key}>
                     <div className='activity-header'>
                         <div className='activity-icon'>{completedActivity.icon}</div>
                         <div className='activity-name'>{completedActivity.name}</div>

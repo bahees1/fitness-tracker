@@ -8,10 +8,6 @@ const Header = () => {
             <div className="header-content">
                 <h1>Fitness Tracker</h1>
                 <div className="header-right">
-                    <div className="search-container">
-                        <input type="text" placeholder="Search" />
-                        <FaSearch className="search-icon" />
-                    </div>
                     <div className="profile-pic">
                         <img alt="Profile" />
                     </div>

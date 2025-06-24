@@ -8,23 +8,23 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
     );
     
 
-    const handleChange = (index, field, value) => {
+    const handleChange = (key, field, value) => {
         const updated = [...localEdits];
-        updated[index][field] = value;
+        updated[key][field] = value;
         setLocalEdits(updated);
 
     };
-    const handleSave = (index) => {
+    const handleSave = (key) => {
         const updated = [...activities];
-        updated[index] = {...localEdits[index]};
+        updated[key] = {...localEdits[key]};
         setActivities(updated);
-        updated[index].progress = Math.floor((updated[index].current / updated[index].goal) * 100);
+        updated[key].progress = Math.floor((updated[key].current / updated[key].goal) * 100);
         alert(`Edit Saved`)
     };
 
-    const handleRemove = (delIndex) => {
+    const handleRemove = (delkey) => {
         const original = [...activities]
-        const remove = original.filter((activity, index) => index !== delIndex);
+        const remove = original.filter((activity, key) => key !== delkey);
         setActivities(remove);
         alert(`Activity Removed`);
     };
@@ -34,11 +34,11 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
         alert(`Activity Added`);
     };
 
-    const handleComplete = (index) => {
+    const handleComplete = (key) => {
         const updated = [...completedActivities];
-        updated[index] = {...localEdits[index]};
+        updated[key] = {...localEdits[key]};
         setCompletedActivities(updated)
-        handleRemove(index);
+        handleRemove(key);
         alert(`Activity Completed`);
         
     };
@@ -52,8 +52,8 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
                 <button className='new-task-btn' onClick={handleAdd}>New Task</button>
             </div>
             <div className='activity-cards'>
-                {localEdits.map((activity, index) => (
-                    <div className='activity-card-editable' key={index}>
+                {localEdits.map((activity, key) => (
+                    <div className='activity-card-editable' key={key}>
                         <div className='activity-header'>
                             <div className='activity-icon'>{activity.icon}</div>
                             <div className='activity-name'>{activity.name}</div>
@@ -64,7 +64,7 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
                                 type='number'
                                 value={activity.goal}
                                 placeholder='Enter # of hours'
-                                onChange={(e) => handleChange(index, 'goal', e.target.value)}
+                                onChange={(e) => handleChange(key, 'goal', e.target.value)}
                             />
                         </label>
                         <label>
@@ -73,14 +73,14 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
                                 type='number'
                                 value={activity.current}
                                 placeholder='Enter # of hours'
-                                onChange={(e) => handleChange(index, 'current', e.target.value)}
+                                onChange={(e) => handleChange(key, 'current', e.target.value)}
                                 
                             />
                         </label>
                         <div className='edit-buttons'>
-                            <button onClick={() => handleSave(index)}>Save</button>
-                            <button onClick={() => handleRemove(index)}>Remove</button>
-                            <button onClick={() => handleComplete(index)}>Completed</button>
+                            <button onClick={() => handleSave(key)}>Save</button>
+                            <button onClick={() => handleRemove(key)}>Remove</button>
+                            <button onClick={() => handleComplete(key)}>Completed</button>
                         </div>
 
                     </div>

@@ -7,8 +7,8 @@ const ActivityCards = ({ activities }) => {
     return (
         <div className='activity-cards'>
 
-            {activities.map((activity, index) => (
-                <div className='activity-card' key={index}>
+            {activities.map((activity, key) => (
+                <div className='activity-card' key={key}>
                     <div className='activity-header'>
                         <div className='activity-icon'>{activity.icon}</div>
                         <div className='activity-name'>{activity.name}</div>
