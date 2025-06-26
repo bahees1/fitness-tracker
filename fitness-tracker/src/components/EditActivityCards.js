@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import './styles/EditActivityCards.css';
 import getIconByName from '../utils/getIconByName';
 
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
 
 const EditActivityCards = ({activities, setActivities, completedActivities, setCompletedActivities}) => {
     const [localEdits, setLocalEdits] = useState(() => 
     activities.map(activity => ({ ...activity }))
     );
+
+    const [selectedIcon, setSelectedIcon] = useState('walking');
     
 
     const handleChange = (key, field, value) => {
@@ -37,7 +41,7 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
             goal: 0,
             current: 0,
             progress: 0,
-            icon: "walking"
+            icon: selectedIcon
         }
         setActivities((prev) => [...prev, newActivity]);
         alert(`Activity Added`);
@@ -63,7 +67,23 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
                     <div className='activity-card-editable' key={key}>
                         <div className='activity-header'>
                             <div className='activity-icon'>{getIconByName(activity.icon)}</div>
-                            <div className='activity-name'>{activity.name}</div>
+                            <div className='activity-name'>
+                                <select
+                                    className='activity-selector'
+                                    value={activity.icon}
+                                    onChange={(e) => {
+                                        const selected = e.target.value;
+                                        handleChange(key, 'icon', selected);
+                                        handleChange(key, 'name', capitalize(selected));
+                                    }}>
+                                    {["walking", "running", "workouts", "biking", "swimming", "hiking"].map((option) => (
+                                        <option key={option} value={option}>
+                                            {capitalize(option)}
+                                        </option>
+                                    ))}
+
+                                </select>
+                            </div>
                         </div>
                         <label>
                             Goal 

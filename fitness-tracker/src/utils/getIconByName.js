@@ -11,7 +11,7 @@ import {
 const iconMap = {
   walking: FaWalking,
   running: FaRunning,
-  dumbbell: FaDumbbell,
+  workouts: FaDumbbell,
   biking: FaBiking,
   swimming: FaSwimmer,
   hiking: FaHiking,
