@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles/EditActivityCards.css';
+import getIconByName from '../utils/getIconByName';
 
 
 const EditActivityCards = ({activities, setActivities, completedActivities, setCompletedActivities}) => {
@@ -30,14 +31,20 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
     };
     
     const handleAdd = () => {
-        setActivities(activities => [...activities, activities[0]]);
+        const newActivity = {
+            key: Date.now(),
+            name: "New Activity",
+            goal: 0,
+            current: 0,
+            progress: 0,
+            icon: "walking"
+        }
+        setActivities((prev) => [...prev, newActivity]);
         alert(`Activity Added`);
     };
 
     const handleComplete = (key) => {
-        const updated = [...completedActivities];
-        updated[key] = {...localEdits[key]};
-        setCompletedActivities(updated)
+        setCompletedActivities(prev => [...prev, { ...localEdits[key] }]);
         handleRemove(key);
         alert(`Activity Completed`);
         
@@ -55,7 +62,7 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
                 {localEdits.map((activity, key) => (
                     <div className='activity-card-editable' key={key}>
                         <div className='activity-header'>
-                            <div className='activity-icon'>{activity.icon}</div>
+                            <div className='activity-icon'>{getIconByName(activity.icon)}</div>
                             <div className='activity-name'>{activity.name}</div>
                         </div>
                         <label>

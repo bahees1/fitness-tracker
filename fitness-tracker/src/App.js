@@ -7,15 +7,15 @@ import Overview from './components/Overview';
 import EditActivityCards from './components/EditActivityCards';
 import CompletedActivityCards from './components/CompletedActivityCards';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { FaWalking, FaRunning, FaDumbbell} from 'react-icons/fa';
+
 
 function App() {
   const [activities, setActivities] = useState(
       [
-      { key: 1, name: "Activity", progress: 0, goal: 0, current: 0, icon: <FaWalking />},
-      { key: 2, name: "Walking", progress: 45, goal: 10, current: 4.5, icon: <FaWalking />},
-      { key: 3, name: "Running", progress: 75, goal: 20, current: 15, icon: <FaRunning />},
-      { key: 4, name: "Workouts", progress: 25, goal: 4, current: 1, icon: <FaDumbbell />},
+      { key: 1, name: "Activity", progress: 0, goal: 0, current: 0, icon: "walking"},
+      { key: 2, name: "Walking", progress: 45, goal: 10, current: 4.5, icon: "walking"},
+      { key: 3, name: "Running", progress: 75, goal: 20, current: 15, icon: "running"},
+      { key: 4, name: "Workouts", progress: 25, goal: 4, current: 1, icon: "dumbbell"},
       ]
     );
 

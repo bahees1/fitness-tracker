@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/CompletedActivityCards.css';
+import getIconByName from '../utils/getIconByName';
 
 const CompletedActivityCards = ({ completedActivities }) => {
     return (
@@ -7,7 +8,7 @@ const CompletedActivityCards = ({ completedActivities }) => {
             {completedActivities.map((completedActivity, key) => (
                 <div className='activity-card' key={key}>
                     <div className='activity-header'>
-                        <div className='activity-icon'>{completedActivity.icon}</div>
+                        <div className='activity-icon'>{getIconByName(completedActivity.icon)}</div>
                         <div className='activity-name'>{completedActivity.name}</div>
                     </div>
                     <div className='activity-info'>

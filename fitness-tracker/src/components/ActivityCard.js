@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/ActivityCard.css';
+import getIconByName from '../utils/getIconByName';
 
 const ActivityCards = ({ activities }) => {
 
@@ -10,7 +11,7 @@ const ActivityCards = ({ activities }) => {
             {activities.map((activity, key) => (
                 <div className='activity-card' key={key}>
                     <div className='activity-header'>
-                        <div className='activity-icon'>{activity.icon}</div>
+                        <div className='activity-icon'>{getIconByName(activity.icon)}</div>
                         <div className='activity-name'>{activity.name}</div>
                     </div>
                     <div className='activity-info'>
