@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/EditActivityCards.css';
 import getIconByName from '../utils/getIconByName';
 
@@ -12,6 +12,9 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
 
     const [selectedIcon, setSelectedIcon] = useState('walking');
     
+    useEffect(() => {
+        setLocalEdits(activities.map((a) => ({...a})));
+    }, [activities]);
 
     const handleChange = (key, field, value) => {
         const updated = [...localEdits];
@@ -19,13 +22,19 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
         setLocalEdits(updated);
 
     };
-    const handleSave = (key) => {
-        const updated = [...activities];
-        updated[key] = {...localEdits[key]};
-        setActivities(updated);
-        updated[key].progress = Math.floor((updated[key].current / updated[key].goal) * 100);
-        alert(`Edit Saved`)
+    const handleSave = (index) => {
+        const updatedActivity = { ...localEdits[index] };
+        updatedActivity.progress = Math.floor((updatedActivity.current / updatedActivity.goal) * 100);
+
+        setActivities(prev =>
+            prev.map((activity, i) =>
+            i === index ? updatedActivity : activity
+            )
+        );
+
+        alert("Edit Saved");
     };
+
 
     const handleRemove = (delkey) => {
         const original = [...activities]
