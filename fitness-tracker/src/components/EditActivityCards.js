@@ -57,7 +57,14 @@ const EditActivityCards = ({activities, setActivities, completedActivities, setC
     };
 
     const handleComplete = (key) => {
-        setCompletedActivities(prev => [...prev, { ...localEdits[key] }]);
+        const completed = { ...localEdits[key] };
+
+        // ✅ Fix name if it's not already synced
+        completed.name = capitalize(completed.icon);
+        completed.progress = Math.floor((completed.current / completed.goal) * 100);
+        completed.timestamp = Date.now(); // optional
+
+        setCompletedActivities(prev => [...prev, completed]);
         handleRemove(key);
         alert(`Activity Completed`);
         

@@ -48,7 +48,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <Overview />
+                  <Overview completedActivities={completedActivities} />
                   <ActivityCards activities={activities} />
                 </>
               }

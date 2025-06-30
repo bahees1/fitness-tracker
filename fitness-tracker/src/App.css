@@ -19,7 +19,6 @@ body {
 .App {
   padding: 10px;
   background-color: #222831;
-  box-shadow: 0 2px 12px rgba(57, 62, 70, 0.511);
   display: flex;
   height: 100vh;
 

@@ -1,6 +1,6 @@
 .activity-cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
     margin-bottom: 20px;
     padding-top: 2px;
