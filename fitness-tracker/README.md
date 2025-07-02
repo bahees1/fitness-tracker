@@ -3,16 +3,21 @@
 A responsive React web app that helps users monitor and manage their walking, running, and workout activity in one place. Users can add custom goals, log progress, and instantly see their stats updated on a dynamic chart. The app stores all data locally, so everything is saved even after refresh — no login required. With real-time editing, visual feedback, and a clean UI, it's a powerful yet lightweight tool for staying accountable and tracking fitness habits over time.
 
 ## Project Screen Shot(s)
+Main Dashboard:
+![image](https://github.com/user-attachments/assets/db4d4a1f-bd93-4381-9101-5e7e980018f7)
 
-#### Example:   
 
-[ PRETEND SCREEN SHOT IS HERE ]
+Edit Activity Page:
+![image](https://github.com/user-attachments/assets/afb5a7b7-272f-4173-8b2e-12923c9640f6)
 
-[ PRETEND OTHER SCREEN SHOT IS HERE ]
+
+
 
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+
+*Cd into the repo*
 
 Installation:
 
