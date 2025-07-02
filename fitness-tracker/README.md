@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+## Personal Fitness Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React web app that helps users monitor and manage their walking, running, and workout activity in one place. Users can add custom goals, log progress, and instantly see their stats updated on a dynamic chart. The app stores all data locally, so everything is saved even after refresh — no login required. With real-time editing, visual feedback, and a clean UI, it's a powerful yet lightweight tool for staying accountable and tracking fitness habits over time.
 
-## Available Scripts
+## Project Screen Shot(s)
 
-In the project directory, you can run:
+#### Example:   
 
-### `npm start`
+[ PRETEND SCREEN SHOT IS HERE ]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[ PRETEND OTHER SCREEN SHOT IS HERE ]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation and Setup Instructions
 
-### `npm test`
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Installation:
 
-### `npm run build`
+`npm install`  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To Start Server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm start`  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To Visit App:
 
-### `npm run eject`
+`localhost:3000/`  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Reflection
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This was a solo side project I built to strengthen my frontend development skills while preparing for software developer co-op and internship roles. My goal was to create a fully functional, responsive fitness dashboard that mimics a real-world product, focusing on CRUD interactions, persistent data, and visual feedback — all while using modern React practices.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I set out to build a fitness tracking app where users could log activities (walking, running, workouts), visualize their progress, and manage their goals over time. I wanted the app to feel polished and feature-rich, with inline editing, icon-based activity types, and a clean dashboard layout. The more I worked on it, the more it evolved into a full-scale SPA with dynamic charting, data persistence, and component reuse.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project became a strong learning experience because I tackled many practical frontend problems: state syncing between pages, designing reusable logic for icon rendering, persisting complex data using localStorage, and dynamically visualizing user data with Chart.js. One particularly tricky issue was that I couldn’t directly store JSX like <FaWalking /> in state due to serialization errors — I had to refactor my design to store icon names as strings and use a helper component (getIconByName) to map them back to display icons. I also encountered issues with stale useState copies, broken layout rendering due to CSS scoping, and improper rerenders when editing or completing activities — each bug pushing me to learn more about React’s update cycle, key usage, and component design.
 
-## Learn More
+Unexpected challenges included maintaining consistent state across multiple components (ActivityCards, EditActivityCards, and Overview), and ensuring user actions like adding or completing an activity dynamically updated the dashboard view. I also had to troubleshoot localStorage parsing bugs, race conditions during rerender, and redesign parts of my component hierarchy to avoid prop drilling and ensure scalability.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I chose to build this with React and react-router-dom to simulate the structure of real-world SPAs, along with Chart.js via react-chartjs-2 for fast, interactive data visualization. I avoided larger frameworks like Redux because the app’s scope was perfect for React’s local state + context patterns. For icons, I used react-icons with FontAwesome and implemented a smart mapping layer for rendering, which added flexibility and kept bundle size optimized. Styling was done via plain CSS modules to keep control over layout and responsive design.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+At the end of the project, I not only gained confidence in working with complex React state, but also walked away with a much deeper understanding of user experience design, component isolation, and state persistence in modern frontend apps. My next step would be to integrate Firebase or a backend database to support multi-user authentication and data syncing across sessions.
