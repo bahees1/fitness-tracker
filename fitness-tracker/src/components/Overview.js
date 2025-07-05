@@ -33,7 +33,7 @@ const Overview = ({ completedActivities }) => {
       if (a.icon === activityType) {
         const date = new Date(a.timestamp || a.date || Date.now());
         const monthIndex = date.getMonth();
-        result[monthIndex] += Number(a.current || 0); // ✅ Use current as hours
+        result[monthIndex] += Number(a.current || 0); 
       }
     });
     return result;
@@ -41,7 +41,7 @@ const Overview = ({ completedActivities }) => {
 
   const walkingData = getMonthlyData('walking');
   const runningData = getMonthlyData('running');
-  const workoutData = getMonthlyData('workouts'); // ✅ Now stores workout *hours*
+  const workoutData = getMonthlyData('workouts'); 
 
   const data = {
     labels: months,
